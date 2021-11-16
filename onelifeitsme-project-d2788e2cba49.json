@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "onelifeitsme-project",
+  "private_key_id": "d2788e2cba49a6da71897e8cc95be7cd40b27375",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCaJ4arQ+Sj/d1H\nlWdnmyUiKs3gn5PJ8pSRhoTFZn3FmwcSWtUMNuIYCRz+tkejTdUs0+2FWJe98vSA\nXSzkBgVu1KXOLQisoFixMJVfgLcKVlGOd90ykMiujfbfk6P6tgrKyjK8hokJ5rFT\nNIQiEuRksVEuLGABZZ3Eyh4aScNSxLay0blkBYE7u1oXv5H7NSzO4QjyJw/C1q26\ngCxKqqJg4O9dPFkDV815grrqFtdk3GXuK1WgdUTUkgBGh6sddZi0B8XVzQWDIi1K\nIfK8ashzoej0Mb+VXIqOdrwGMot/AtYv9K/XS4GO5KYSKpgjVqcqz8BCFRO2E1dY\n6IdrXBNZAgMBAAECggEAHijZiixwUT1by6OJZZXPAA5L1USjT4FsW8RruYtB1CVu\njsLCp+8c8QLnb1YOUf7qVCjqcYpRtdIQ0ARqwfoDmhl0jw/0gIGmmJQexV6TcSxO\nLId6+WemO7B+umNSU7zGA8Lnhkb0DMHbs6G0sE3t7V1buqLn7Z4J7fR1S0NfOZQB\nJiiOJc0L0SPZbSaxC37K3bZqYTm+9VdLJ4STbFhuZZa3jnZ1KndNRlmPzGs9Qcbt\n/dZaPI0uxWRMEocAOUiYPgRDRq+U7Z2cMMpuwveZ37m2OMHEQeFMA7ENRfd6sr6K\nUJULHIgOhoHxWNVQqQaZ3jOADXdRAx9tpIeAauToeQKBgQDSaLRlspY0ggpaA//W\nMTtLqR2m3NoTl67mMwpjAV5y5o6lHrn8WGbGAxyP76FqHJInHSLRGJWXwwvBdOXA\neTy0bUU1sotbTu+7AvwF0IMeB2CoOtTF5DtxL3C68uysEs2sAlnWelEGcgY8RT5U\n0VEnDOLnyVX5kwd39x0tmOetNwKBgQC7jmcxn+GNDRMj6mCxZzBrI+aZy2zYuk3n\nawjLdtJ/8GqLoNHppZ8OI1M8ycL65g4dBO/rIuYeV59fd129HTKsADsrfeIyWJBU\nM5v4tpbeJb6O+u5D7m7OwnigvZCw27YU/frFNNL3ujBlMWCDZ0eb5KLjO90e9bcp\nsfQkTmAL7wKBgQCkikDYbonL0g2qSwpcQ++swTlw7bCUNcAOQMfUmJN1oxrVwWuM\nDM2B95j0bl56DpG0iLJbdbA2F88vn+yzUZvJNNI0pcUYyGfshO701RRT/Uz3Adq2\nTj61ynWLnMC755By/PuoH8sREUYTB8swpOejdA5VWDslincCt3pX2AUEjQKBgDnX\n7VOMr49E3QZSnoeX/4LLi68a4fLlYmlgxVGaz8jNaM6vRo38mlVN57nzr8KZePjS\nMPwfw0DQXUKgGbTdcGdDmvwK0twcHEcbs5q9FUJl+aM3GIyy2FHEAFfyntEssbc/\nrTts0zO7pHlRBScBj0Aw/1t9dvC5b0fYricUVOLZAoGAS6GGEMCz5SNfrOrooXdm\nIYHFpoFoP3zNBrJSgtRrIN0jxVTpai1T33yv53wuUtSHZWkj1Y2zTblB0h/bPmJQ\nUY+cl+Stz3N9zD5liIfdHUQAIolcdve+FMLK7sw2TamEE/R8I90JZ5l/3u2xyhzD\n//e15U2oDwAQ31Clq1XjO+I=\n-----END PRIVATE KEY-----\n",
+  "client_email": "onelifeitsme-main-service-acco@onelifeitsme-project.iam.gserviceaccount.com",
+  "client_id": "113127981124233176744",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/onelifeitsme-main-service-acco%40onelifeitsme-project.iam.gserviceaccount.com"
+}
