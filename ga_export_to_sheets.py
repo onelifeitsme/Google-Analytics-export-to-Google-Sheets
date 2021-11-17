@@ -4,8 +4,8 @@ from oauth2client.service_account import ServiceAccountCredentials
 import gspread
 
 SCOPES = ['https://www.googleapis.com/auth/analytics.readonly']
-KEY_FILE_LOCATION = 'C:\Python39\django\google_analytics_export_to_google_sheets\onelifeitsme-project-d2788e2cba49.json'
-VIEW_ID = '234753675'
+KEY_FILE_LOCATION = 'FULL PATH TO JSON KEY FROM GOOGLE API CONSOLE'
+VIEW_ID = 'YOU GOOGLE ANALYTICS VIEW ID'
 
 my_cities = ['Moscow', 'Saint Petersburg', 'Novosibirsk', 'Krasnodar', 'Samara', 'Kazan']
 
@@ -80,8 +80,8 @@ today = Report('today')
 
 
 # ВЫВОД В ТАБЛИЦУ
-gc = gspread.service_account(filename='onelifeitsme-project-d2788e2cba49.json')
-sh = gc.open_by_url('https://docs.google.com/spreadsheets/d/1f2WOUaNlrGvFaQlgUOnc_9uO11S1wNbafturfWuIrjk/edit')
+gc = gspread.service_account(filename='ONLY NAME OF JSON KEY FROM GOOGLE API CONSOLE')
+sh = gc.open_by_url('GOOGLE SHEET URL')
 worksheet = sh.get_worksheet(0)
 
 worksheet.update('B3', [[sixdaysago.my_cities_dict[0]['Moscow']],[sixdaysago.my_cities_dict[1]['Saint Petersburg']], [sixdaysago.my_cities_dict[2]['Novosibirsk']], [sixdaysago.my_cities_dict[3]['Krasnodar']], [sixdaysago.my_cities_dict[4]['Samara']],[sixdaysago.my_cities_dict[5]['Kazan']]])
