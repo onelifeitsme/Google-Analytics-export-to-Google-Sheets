@@ -15,13 +15,16 @@ def initialize_analyticsreporting():
         KEY_FILE_LOCATION, SCOPES)
     analytics = build('analyticsreporting', 'v4', credentials=credentials)
     return analytics
+
+
 analytics = initialize_analyticsreporting()
+
 
 class Report():
     my_cities_dict = [{city: visitors} for city, visitors in zip(my_cities, [0] * 6)]
+
     def __init__(self, days_ago):
         self.days_ago = days_ago
-        convert_to_dataframe = self.convert_to_dataframe()
 
     def get_report(self, analytics):
         days_ago = self.days_ago
@@ -36,6 +39,7 @@ class Report():
                     }]
             }
         ).execute()
+
     def convert_to_dataframe(self):
         my_cities_dict = self.my_cities_dict
         response = self.get_report(analytics)
@@ -65,9 +69,9 @@ class Report():
                 if fr['ga:city'] in mcd:
                     mcd[fr['ga:city']] = fr['ga:sessions']
 
-
         dataFrameFormat = pd.DataFrame(finalReport)
         return dataFrameFormat
+
 
 # ЭКЗЕМПЛЯРЫ КЛАССА ДЛЯ КАЖДОГО ИЗ 7 ДНЕЙ
 sixdaysago = Report('6daysAgo')
@@ -84,13 +88,45 @@ gc = gspread.service_account(filename='ONLY NAME OF JSON KEY FROM GOOGLE API CON
 sh = gc.open_by_url('GOOGLE SHEET URL')
 worksheet = sh.get_worksheet(0)
 
-worksheet.update('B3', [[sixdaysago.my_cities_dict[0]['Moscow']],[sixdaysago.my_cities_dict[1]['Saint Petersburg']], [sixdaysago.my_cities_dict[2]['Novosibirsk']], [sixdaysago.my_cities_dict[3]['Krasnodar']], [sixdaysago.my_cities_dict[4]['Samara']],[sixdaysago.my_cities_dict[5]['Kazan']]])
-worksheet.update('C3', [[fivedaysago.my_cities_dict[0]['Moscow']],[fivedaysago.my_cities_dict[1]['Saint Petersburg']], [fivedaysago.my_cities_dict[2]['Novosibirsk']], [fivedaysago.my_cities_dict[3]['Krasnodar']], [fivedaysago.my_cities_dict[4]['Samara']],[fivedaysago.my_cities_dict[5]['Kazan']]])
-worksheet.update('D3', [[fourdaysago.my_cities_dict[0]['Moscow']],[fourdaysago.my_cities_dict[1]['Saint Petersburg']], [fourdaysago.my_cities_dict[2]['Novosibirsk']], [fourdaysago.my_cities_dict[3]['Krasnodar']], [fourdaysago.my_cities_dict[4]['Samara']],[fourdaysago.my_cities_dict[5]['Kazan']]])
-worksheet.update('E3', [[threedaysago.my_cities_dict[0]['Moscow']],[threedaysago.my_cities_dict[1]['Saint Petersburg']], [threedaysago.my_cities_dict[2]['Novosibirsk']], [threedaysago.my_cities_dict[3]['Krasnodar']], [threedaysago.my_cities_dict[4]['Samara']],[threedaysago.my_cities_dict[5]['Kazan']]])
-worksheet.update('F3', [[twodaysago.my_cities_dict[0]['Moscow']],[twodaysago.my_cities_dict[1]['Saint Petersburg']], [twodaysago.my_cities_dict[2]['Novosibirsk']], [twodaysago.my_cities_dict[3]['Krasnodar']], [twodaysago.my_cities_dict[4]['Samara']],[twodaysago.my_cities_dict[5]['Kazan']]])
-worksheet.update('G3', [[onedayago.my_cities_dict[0]['Moscow']],[onedayago.my_cities_dict[1]['Saint Petersburg']], [onedayago.my_cities_dict[2]['Novosibirsk']], [onedayago.my_cities_dict[3]['Krasnodar']], [onedayago.my_cities_dict[4]['Samara']],[onedayago.my_cities_dict[5]['Kazan']]])
-worksheet.update('H3', [[today.my_cities_dict[0]['Moscow']],[today.my_cities_dict[1]['Saint Petersburg']], [today.my_cities_dict[2]['Novosibirsk']], [today.my_cities_dict[3]['Krasnodar']], [today.my_cities_dict[4]['Samara']],[today.my_cities_dict[5]['Kazan']]])
-
-
-
+worksheet.update('B3', [[sixdaysago.my_cities_dict[0]['Moscow']],
+                        [sixdaysago.my_cities_dict[1]['Saint Petersburg']],
+                        [sixdaysago.my_cities_dict[2]['Novosibirsk']],
+                        [sixdaysago.my_cities_dict[3]['Krasnodar']],
+                        [sixdaysago.my_cities_dict[4]['Samara']],
+                        [sixdaysago.my_cities_dict[5]['Kazan']]])
+worksheet.update('C3', [[fivedaysago.my_cities_dict[0]['Moscow']],
+                        [fivedaysago.my_cities_dict[1]['Saint Petersburg']],
+                        [fivedaysago.my_cities_dict[2]['Novosibirsk']],
+                        [fivedaysago.my_cities_dict[3]['Krasnodar']],
+                        [fivedaysago.my_cities_dict[4]['Samara']],
+                        [fivedaysago.my_cities_dict[5]['Kazan']]])
+worksheet.update('D3', [[fourdaysago.my_cities_dict[0]['Moscow']],
+                        [fourdaysago.my_cities_dict[1]['Saint Petersburg']],
+                        [fourdaysago.my_cities_dict[2]['Novosibirsk']],
+                        [fourdaysago.my_cities_dict[3]['Krasnodar']],
+                        [fourdaysago.my_cities_dict[4]['Samara']],
+                        [fourdaysago.my_cities_dict[5]['Kazan']]])
+worksheet.update('E3', [[threedaysago.my_cities_dict[0]['Moscow']],
+                        [threedaysago.my_cities_dict[1]['Saint Petersburg']],
+                        [threedaysago.my_cities_dict[2]['Novosibirsk']],
+                        [threedaysago.my_cities_dict[3]['Krasnodar']],
+                        [threedaysago.my_cities_dict[4]['Samara']],
+                        [threedaysago.my_cities_dict[5]['Kazan']]])
+worksheet.update('F3', [[twodaysago.my_cities_dict[0]['Moscow']],
+                        [twodaysago.my_cities_dict[1]['Saint Petersburg']],
+                        [twodaysago.my_cities_dict[2]['Novosibirsk']],
+                        [twodaysago.my_cities_dict[3]['Krasnodar']],
+                        [twodaysago.my_cities_dict[4]['Samara']],
+                        [twodaysago.my_cities_dict[5]['Kazan']]])
+worksheet.update('G3', [[onedayago.my_cities_dict[0]['Moscow']],
+                        [onedayago.my_cities_dict[1]['Saint Petersburg']],
+                        [onedayago.my_cities_dict[2]['Novosibirsk']],
+                        [onedayago.my_cities_dict[3]['Krasnodar']],
+                        [onedayago.my_cities_dict[4]['Samara']],
+                        [onedayago.my_cities_dict[5]['Kazan']]])
+worksheet.update('H3', [[today.my_cities_dict[0]['Moscow']],
+                        [today.my_cities_dict[1]['Saint Petersburg']],
+                        [today.my_cities_dict[2]['Novosibirsk']],
+                        [today.my_cities_dict[3]['Krasnodar']],
+                        [today.my_cities_dict[4]['Samara']],
+                        [today.my_cities_dict[5]['Kazan']]])
